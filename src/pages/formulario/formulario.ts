@@ -14,12 +14,24 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'formulario.html',
 })
 export class FormularioPage {
+  dados = {
+    nome: '',
+    foto: ''
+  };
+
+  animais = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FormularioPage');
+  }
+
+  inserir(){
+    this.animais.push(this.dados);
+    this.dados = {nome: '', foto: ''};
+    console.log(this.animais);  
   }
 
 }
