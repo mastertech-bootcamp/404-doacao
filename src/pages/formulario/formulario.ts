@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NoeProvider } from '../../providers/noe/noe';
 
 /**
  * Generated class for the FormularioPage page.
@@ -19,9 +20,9 @@ export class FormularioPage {
     foto: ''
   };
 
-  animais = [];
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, 
+    public navParams: NavParams,
+    public noe: NoeProvider) {
   }
 
   ionViewDidLoad() {
@@ -29,9 +30,8 @@ export class FormularioPage {
   }
 
   inserir(){
-    this.animais.push(this.dados);
-    this.dados = {nome: '', foto: ''};
-    console.log(this.animais);  
+    this.noe.inserir(this.dados);
+    this.dados = {nome: '', foto: ''};  
   }
 
 }

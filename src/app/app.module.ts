@@ -11,6 +11,7 @@ import { FormularioPageModule } from '../pages/formulario/formulario.module';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { FormsModule } from '@angular/forms';
+import { NoeProvider } from '../providers/noe/noe';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { FormsModule } from '@angular/forms';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    NoeProvider
   ]
 })
 export class AppModule {}

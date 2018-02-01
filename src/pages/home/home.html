@@ -5,14 +5,13 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-list>
-    <ion-item>
+  <ion-list *ngIf="noe">
+      {{noe.animais}}
+    <ion-item *ngFor="let animal of noe.animais">
       <ion-thumbnail item-start>
-        <img src="https://vignette.wikia.nocookie.net/studio-ghibli/images/1/1f/Totoro.gif/revision/latest?cb=20130110181320">
+        <img src="{{animal.foto}}">
       </ion-thumbnail>
-      <h2>My Neighbor Totoro</h2>
-      <p>Hayao Miyazaki • 1988</p>
-      <button ion-button clear item-end>View</button>
+      <h2>{{animal.nome}}</h2>
     </ion-item>
   </ion-list>
 </ion-content>
