@@ -9,7 +9,7 @@ import { NoeProvider } from '../../providers/noe/noe';
 export class HomePage {
 
   constructor(public navCtrl: NavController, public noe: NoeProvider) {
-    
+    this.noe.ler();
   }
 
 }

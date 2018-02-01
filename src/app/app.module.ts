@@ -12,6 +12,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { FormsModule } from '@angular/forms';
 import { NoeProvider } from '../providers/noe/noe';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { NoeProvider } from '../providers/noe/noe';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     FormularioPageModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

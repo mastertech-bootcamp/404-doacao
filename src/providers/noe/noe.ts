@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 /*
   Generated class for the NoeProvider provider.
@@ -10,9 +11,25 @@ import { Injectable } from '@angular/core';
 export class NoeProvider {
   animais = [];
 
+  constructor(public http: HttpClient){
+  }
+
   inserir(animal){
-    this.animais.push(animal);
-    console.log(this.animais);
+    this.http
+      .post('http://188.166.14.140:3000/animal', animal)
+      .subscribe(() => {
+        console.log('Animal inserido!');
+      });
+
+    console.log('Mandei a bagaça');
+  }
+
+  ler(){
+    this.http
+      .get<any>('http://188.166.14.140:3000/animal')
+      .subscribe((resposta) => {
+        this.animais = resposta;
+      });
   }
 
 }
